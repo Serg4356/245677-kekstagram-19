@@ -1,7 +1,7 @@
 # Личный проект «Кекстаграм» [![Build status][travis-image]][travis-url]
 
 * Студент: [Сергей Колоколов](https://up.htmlacademy.ru/javascript/19/user/245677).
-* Наставник: `Неизвестно`.
+* Наставник: `Динар Гиндулин`.
 
 ---
 
