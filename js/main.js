@@ -1,7 +1,7 @@
 'use strict';
 
 var PHOTO_DESCRIPTION_COUNT = 25;
-var MIN_INDEX = 0
+var MIN_INDEX = 0;
 var MIN_LIKE_COUNT = 15;
 var MAX_LIKE_COUNT = 200;
 var MIN_COMMENT_COUNT = 1;
@@ -36,26 +36,27 @@ var generateComments = function () {
 
   for (var i = 0; i < getRandomIntInclusive(MIN_COMMENT_COUNT, MAX_COMMENT_COUNT); i++) {
     comments[i] = {
-      avatar: 'img/avatar-'+ getRandomIntInclusive(MIN_AVATAR_ID, MAX_AVATAR_ID) +'.svg',
+      avatar: 'img/avatar-' + getRandomIntInclusive(MIN_AVATAR_ID, MAX_AVATAR_ID) + '.svg',
       message: MESSAGES[getRandomIntInclusive(MIN_INDEX, MESSAGES.length - 1)],
       name: NAMES[getRandomIntInclusive(MIN_INDEX, NAMES.length - 1)]
     };
-  };
+  }
 
   return comments;
 };
 
 var generatePhotoDescriptions = function () {
-  var photo_descriptions = [];
+  var photoDescriptions = [];
   for (var i = 0; i < PHOTO_DESCRIPTION_COUNT; i++) {
-    photo_descriptions[i] = {
+    photoDescriptions[i] = {
       url: 'photos/' + (i + 1) + '.jpg',
       description: '',
       likes: getRandomIntInclusive(MIN_LIKE_COUNT, MAX_LIKE_COUNT),
       comments: generateComments(),
     };
-  };
-  return photo_descriptions;
+  }
+
+  return photoDescriptions;
 };
 
 
@@ -65,7 +66,7 @@ var comments = generatePhotoDescriptions();
 
 for (var i = 0; i < comments.length; i++) {
   var pictureElement = pictureTemplate.cloneNode(true);
-  pictureElement.querySelector('.picture__img').setAttribute("src", comments[i].url);
+  pictureElement.querySelector('.picture__img').setAttribute('src', comments[i].url);
   pictureElement.querySelector('.picture__likes').textContent = comments[i].likes;
   pictureElement.querySelector('.picture__likes').textContent = comments[i].comments.length;
   pictureFragment.appendChild(pictureElement);
