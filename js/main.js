@@ -42,7 +42,7 @@ var getRandomIntInclusive = function (min, max) {
 var getRandomAvatarImgPath = function () {
   var randomAvatarNumber = getRandomIntInclusive(MIN_AVATAR_ID, MAX_AVATAR_ID);
 
-  return AVATAR_PATH_PREFIX + randomAvatarNumber + AVATAR_EXTENSION
+  return AVATAR_PATH_PREFIX + randomAvatarNumber + AVATAR_EXTENSION;
 };
 
 var getRandomComments = function () {
